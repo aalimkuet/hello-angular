@@ -1,4 +1,4 @@
-<div class="conteiner p-4">
+<div class="conteiner m-4">
   <h2>Hello Angular!</h2>
   <div class="col-4">
     <input [(ngModel)]="name" #RefVal type="text" class="form-control" />
@@ -27,8 +27,7 @@
   <div *ngFor="let student of students; index as i; last as l">
     <div class="col-4">
       <div
-        class="card mt-2"
-        style="background-color: azure; border-radius: 20px"
+        class="card mt-2 cardStyle" 
       >
         <div class="card-body">
           <h2>Name: {{ student.Name }}</h2>
