@@ -1,38 +1,44 @@
 <div class="conteiner m-4">
-  <h2>Hello Angular!</h2>
-  <div class="col-4">
-    <input [(ngModel)]="name" #RefVal type="text" class="form-control" />
-  </div>
-  <div class="row mt-2">
-    <div class="col-6">
-      <h3>{{ name }}</h3>
-    </div>
-  </div>
-  <div class="col-4 mt-2">
-    <button (click)="btnClick(1, RefVal.value)" class="btn btn-primary">
-      Click me
-    </button>
-    <button routerLink="/home" class="btn btn-success m-2">Router</button>
-    <button class="btn btn-success">Primary</button>
-  </div>
-  <!-- <div *ngIf="false; else elseBlock">
-    <h2>Hello if Condition</h2>
+  <div class="row">
+    <div class="col-6" style="margin-left: 200px;">
+      <h2>Hello Angular!</h2>
+      <div>
+        <input [(ngModel)]="name" #RefVal type="text" class="form-control" />
+      </div>
+      <div class="row mt-2">
+        <div class="col-6">
+          <h4 style="font-weight: 500;">{{ name }}</h4>
+        </div>
+      </div>
+      <div class="mt-2">
+        <button (click)="BtnClick(1, RefVal.value)" class="btn btn-primary">
+          Click me
+        </button>
+        <button routerLink="/home" class="btn btn-success m-2">Router</button>
+        <button class="btn btn-success">Primary</button>
+      </div>
+  
+      <div *ngIf="conditionalBlock; else elseBlock">
+    <h2>Condition True</h2>
   </div>
   <ng-template #elseBlock>
-    <h2>Else block</h2>
-  </ng-template> -->
+    <h2>Condition False</h2>
+  </ng-template>
 
-  <!-- <p>{{colors[2]}}</p> -->
+      <!-- <p>{{colors[2]}}</p> -->
 
-  <div *ngFor="let student of students; index as i; last as l">
-    <div class="col-4">
-      <div
-        class="card mt-2 cardStyle" 
-      >
-        <div class="card-body">
-          <h2>Name: {{ student.Name }}</h2>
-          <h3>Roll: {{ student.Roll }}</h3>
-          <h3>Dept: {{ student.Dept }}</h3>
+      <div *ngFor="let student of students; index as i;">
+        <div>
+          <div class="card mt-2">
+           <div class="card-header">
+            {{i+1}}
+           </div>
+            <div class="card-body cardStyle">
+              <h2>Name: {{ student.Name }}</h2>
+              <h3>Roll: {{ student.Roll }}</h3>
+              <h3>Dept: {{ student.Dept }}</h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>

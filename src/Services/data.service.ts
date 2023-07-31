@@ -7,14 +7,15 @@ import { IStudent } from './Student';
   providedIn: 'root',
 })
 export class DataService {
-  private DataSource = 'https://localhost:7061/api/MemberMasters/GetList';
 
+  private DataSource = 'https://localhost:7061/api/MemberMasters/GetList';
+  
   private data: any = './assets/data/StudentData.json';
   public static getStudent = () => { };
   
   constructor(private httpClient: HttpClient) {}
 
-  public SendGetRequest(): Observable<IStudent[]> {
-    return this.httpClient.get<IStudent[]>(this.data);
+  public SendGetRequest(): Observable<any> {
+    return this.httpClient.get<any>(this.data);
   }
 }

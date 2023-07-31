@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-home',
   template: `
     <p style="font-weight: 900;">
-      home works!
+      Home works!
     </p>
 <div></div>
   `,
-  styles: [
+  styles: [`color: red;`
   ]
 })
 export class HomeComponent implements OnInit {
