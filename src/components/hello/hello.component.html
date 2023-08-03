@@ -1,7 +1,9 @@
+
+
 <div class="conteiner m-4">
   <div class="row">
     <div class="col-6" style="margin-left: 200px;">
-      <h2>Hello Angular!</h2>
+      <h2>{{inputData}}</h2>
       <div>
         <input [(ngModel)]="name" #RefVal type="text" class="form-control" />
       </div>
@@ -25,10 +27,7 @@
     <h2>Condition False</h2>
   </ng-template>
 
-      <!-- <p>{{colors[2]}}</p> -->
-
-      <div *ngFor="let student of students; index as i;">
-        <div>
+      <div *ngFor="let student of students; index as i;"> 
           <div class="card mt-2">
            <div class="card-header">
             {{i+1}}
@@ -37,9 +36,11 @@
               <h2>Name: {{ student.Name }}</h2>
               <h3>Roll: {{ student.Roll }}</h3>
               <h3>Dept: {{ student.Dept }}</h3>
+              <p *ngIf="student.Dept=='CSE'">
+                <button class="btn btn-info" (click)="outData.emit()">Congrats</button>
+              </p> 
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>

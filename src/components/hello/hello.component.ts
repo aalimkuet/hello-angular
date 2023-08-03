@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DataService } from '../../Services/data.service';
+ 
 
 @Component({
   selector: 'app-hello',
@@ -8,17 +9,13 @@ import { DataService } from '../../Services/data.service';
 })
 export class HelloComponent implements OnInit {
 
-  public name = "";
-  public colors = ["Red", "Green", "Blue"];
-  values = ['Apple', 2, 'Orange', 3, 4, 'Banana'];
-  
+  public name = "";       
+  @Input() inputData: string=""; 
   conditionalBlock = true;
+  @Output() outData = new EventEmitter();
 
   BtnClick(Id: number, name: string) {
-    //alert(Id +": "+ name);
-    // var int322 = new Int32Array(429);
-    // int322[0] = 123456789;
-    // console.log('console log ' + int322[0]);
+
   }
 
   public students = new Array();

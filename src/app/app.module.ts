@@ -7,16 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DataService } from 'src/Services/data.service';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+
+
 const routes: Routes = [
-  { path: 'index', component: HelloComponent },
+  { path: 'index', component: HomeComponent },
   { path: '', redirectTo: '/index', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent }
-]
+  { path: 'home', component: HomeComponent },
+  { path: 'hello', component: HelloComponent },
+];
 
 @NgModule({
   declarations: [
